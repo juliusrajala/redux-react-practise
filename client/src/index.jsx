@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Hud from './components/Hud';
 
+require('./style.css');
+
 const data = ['First', 'Second', 'Third', 'Fourth'];
 const route = {
   x: 5,
