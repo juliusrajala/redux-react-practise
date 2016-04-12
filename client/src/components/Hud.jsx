@@ -4,7 +4,7 @@ import ListButton from './ListButton';
 
 export default React.createClass({
   getRoute(){
-    return this.props.route.name || "Valitse reitti!";
+    return this.props.route.name || <p>Valitse reitti!</p>;
   },
   render(){
     return(
