@@ -6,6 +6,10 @@ import Book from './Book';
 
 require('./style.css');
 
+const routes = <Route component= {Hud}>
+  <Route path="/" component=
+</Route>
+
 ReactDOM.render(
   <Hud route={route}/>,
   document.getElementById('app')
