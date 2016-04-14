@@ -6,9 +6,11 @@ export default React.createClass({
   },
   render(){
     return(
-      <div className="searchBar">
+      <div className='searchBar'>
         //Search bar here
-        {this.getRoute()}
+        <form>
+          <input className='routeBar' type='text' placeholder={this.getRoute()}>
+        </form>
       </div>
     );
   }

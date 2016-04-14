@@ -3,7 +3,7 @@ const TEST_CALL = 'TEST';
 const TEST_CALL_TWO = 'TEST2';
 const LIST_CALL = 'LIST';
 
-const data = ['First', 'Second', 'Third', 'Fourth'];
+export const data = ['First', 'Second', 'Third', 'Fourth'];
 const route = {
   x: 5,
   y: 4,

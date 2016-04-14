@@ -1,16 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Hud from './components/Hud';
+import {HudContainer} from './components/Hud';
+import {Router, route, hashHistory} from 'react-router';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import reducer from './reducer';
+import app from './components/App';
 import Api from './api/Api';
 import Book from './Book';
 
 require('./style.css');
 
-const routes = <Route component= {Hud}>
-  <Route path="/" component=
-</Route>
+const routes = <Route component={App}>
+  <Route path="/" component={Hud}/>
+</Route>;
 
 ReactDOM.render(
-  <Hud route={route}/>,
+  <Provider store={store}>
+    <Router history={hashHistory}>{routes}</Router>
+  </Provider>,
   document.getElementById('app')
 );

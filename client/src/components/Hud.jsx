@@ -1,22 +1,31 @@
 import React from 'react';
 import SearchBar from './SearchBar';
 import ListButton from './ListButton';
+import {connect} from 'react-redux';
 import Api from '../api/Api';
 
-export default React.createClass({
+export const Hud = React.createClass({
   getRoute(){
-    return this.props.route.name || <p>Valitse reitti!</p>;
+    return this.props.route || "Valitse reitti!";
   },
   getData(){
-    //TODO: return PoI list by route
-    return ['Test1', 'Test2', 'Test3']
+    return this.props.points || [];
   },
   render(){
     return(
       <div className="mainGUI">
-        <SearchBar name={this.getRoute()}/>
+        <SearchBar routeName={this.getRoute()}/>
         <ListButton/>
       </div>
     );
   }
 });
+
+function mapStateToProps(state){
+  return{
+    points: state.get('points'),
+    route: state.get('route')
+  }
+}
+
+export const HudContainer = connect(mapStateToProps)(Hud);
