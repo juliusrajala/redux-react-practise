@@ -3,7 +3,10 @@ const TEST_CALL = 'TEST';
 const TEST_CALL_TWO = 'TEST2';
 const LIST_CALL = 'LIST';
 
-export const data = ['First', 'Second', 'Third', 'Fourth'];
+export const data = {
+  route: "Old city",
+  points: ['First', 'Second', 'Third', 'Fourth']
+};
 const route = {
   x: 5,
   y: 4,
@@ -13,7 +16,7 @@ const route = {
   ]
 };
 
-export default function Api(route, id=null){
+export function Api(route, id){
   switch(route){
     case TEST_CALL:
       return route;

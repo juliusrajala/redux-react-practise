@@ -4,11 +4,14 @@ import Book from './Book';
 
 export default React.createClass({
   fetchLibrary(){
-    return this.props.library;
+    return ["Turku", "on", "kiva"]
   },
   render(){
-    {this.fetchLibrary().map((book) =>
-      <Book data={book}/>
-    }
+    return(
+      {this.fetchLibrary().map((book) =>
+        //<Book data={book}/>
+        <p>book</p>
+      }
+    )
   }
 });
