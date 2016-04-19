@@ -1,8 +1,8 @@
 import {Map} from 'immutable';
+import { combineReducers } from 'redux';
 import { MapStates, changeRoute } from './constants/actionTypes';
 //const { MAP_EMPTY, MAP_LOADING, MAP_FINISHED } = mapState;
 
-console.log(changeRoute('Test'));
 
 function setState(state, newState){
   return state.merge(newState);
@@ -16,22 +16,34 @@ const defaultState = {
   points: []
 };
 
-export default function(state = defaultState, action){
+function pointsList(state = [], action){
+  switch(action.type){
+    case 'ADD_TO_ROUTE':
+      return [
+        ...state,
+        {
+          id: action.id
+        }
+      ];
+    default:
+      return state;
+  }
+}
+
+function routeFilter(state = defaultState, action){
   switch(action.type){
     case 'CHANGE_ROUTE':
       return Object.assign({}, state, {
         visibilityFilter: action.filter
       });
-    case 'ADD_TO_ROUTE':
-      return Object.assign({}, state, {
-        points: [
-          ...state.points,
-          {
-            id: action.id
-          }
-        ]
-      })
     default:
       return state;
   }
 };
+
+const libraryApp = combineReducers({
+  pointsList,
+  routeFilter
+});
+
+export default libraryApp;
