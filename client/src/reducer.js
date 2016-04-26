@@ -1,6 +1,7 @@
 import {Map} from 'immutable';
 import { combineReducers } from 'redux';
-import { MapStates, changeRoute } from './constants/actionTypes';
+import { MapStates} from './constants/actionTypes';
+import { changeRoute } from './actions';
 //const { MAP_EMPTY, MAP_LOADING, MAP_FINISHED } = mapState;
 
 
