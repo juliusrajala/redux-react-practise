@@ -1,19 +1,19 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import ListButton from './ListButton';
 import Book from './Book';
 
-export default React.createClass({
-  fetchLibrary(){
-    return ["Turku", "on", "kiva"]
-  },
-  render(){
-    return(
-      {this.fetchLibrary().map((book) =>
-        //<Book data={book}/>
-        <p>book</p>
-      }
-    )
-  }
-});
 
-const getLibraryBooks = (points, )
+const Library = ({onBookClick, books}) => {
+  <ul>
+    {books.map((book) =>
+      <ListButton key={book.id} {...todo} onClick={() => onBookClick(book.id)}/>
+    )}
+  </ul>
+};
+
+Library.propTypes = {
+  onBookClick: PropTypes.func.isRequired,
+  books: PropTypes.array.isRequired
+}
+
+export default Library
