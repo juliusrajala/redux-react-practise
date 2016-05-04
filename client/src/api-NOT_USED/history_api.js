@@ -1,3 +1,5 @@
+//THIS IS NOT RELEVANT WITH ACTIONS FETCHING THE DATA.
+
 const ADDRESS_ROOT = 'http://localhost:3000/';
 const TEST_CALL = 'TEST';
 const TEST_CALL_TWO = 'TEST2';

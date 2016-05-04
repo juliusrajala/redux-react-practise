@@ -1,11 +1,15 @@
-import React from 'React';
-import ListButton from './ListButton';
+import React, { PropTypes } from 'react';
 
-export default React.createClass({
-  getDataSets(){
-    return this.props.dataSets;
-  },
-  render(){
-
+const Book = ({data, id}) => {
+  if(data.video !== null){
+    return <VideoLayout/>
+  }else{
+    return <ImageLayout/>
   }
-});
+}
+
+Book.propTypes = {
+  //TODO: Types of props.
+}
+
+export default Book;

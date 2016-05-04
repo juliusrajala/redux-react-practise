@@ -1,18 +1,14 @@
 import React from 'react';
 
-export default React.createClass({
-  getRoute(){
-    return this.props.name;
-  },
-  render(){
-    return(
-      <div className='searchBar'>
-        <h2>Searchbar</h2>
-        <p> what</p>
-        // <form>
-        //   <input className='routeBar' type='text' placeholder={this.getRoute()}/>
-        // </form>
-      </div>
-    );
-  }
-});
+const SearchBar = ({route}) => {
+  return(
+    <div className='searchBar'>
+      <h2>Searchbar</h2>
+      <form>
+        <input className='routeBar' type='text' placeholder={route.name}/>
+      </form>
+    </div>
+  );
+}
+
+export default SearchBar;

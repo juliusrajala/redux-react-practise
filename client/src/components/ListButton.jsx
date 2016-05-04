@@ -7,3 +7,10 @@ const ListButton = ({book, onClick}) => {
     {Book.name}
   </li>
 }
+
+ListButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  book: PropTypes.obj.isRequired
+}
+
+export default ListButton;

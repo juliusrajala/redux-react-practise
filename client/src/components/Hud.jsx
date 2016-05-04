@@ -2,27 +2,20 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import ListButton from './ListButton';
 import {connect} from 'react-redux';
-import Api from '../api/history_api';
 
-export const Hud = React.createClass({
-  getRoute(){
-    return this.props.route || "Valitse reitti!";
-  },
-  getData(){
-    return this.props.points || [];
-  },
+const Hud = ({route, items}) => {
   render(){
     return(
       <div className="mainGUI">
         <h1>Test title</h1>
-        <SearchBar routeName={this.getRoute()}/>
-        <ListButton/>
+        <SearchBar routeName={route}/>
+        //TODO: + Muut tarvittavat komponentit näkymään
       </div>
     );
   }
-});
+};
 
-function mapStateToProps(state){
+const mapStateToProps(state){
   return{
     points: state.get('points'),
     route: state.get('route')

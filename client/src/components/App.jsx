@@ -1,9 +1,31 @@
-import React from 'react';
-// import {List} from 'immutable';
-// import {data} from '../api/api';
+import React, { Component } from 'react'
+import { Provider } from 'react-redux'
+import {createStore} from 'redux';
 
-export default React.createClass({
+import {HudContainer} from './components/Hud';
+import reducer from './reducer';
+
+import {Router, route, hashHistory} from 'react-router'; //Still needs routing implementation, check full-stack guide.
+
+require('./style.css');
+
+
+const store = createStore(reducer);
+
+store.dispatch({
+  type: 'SET_STATE',
+  state:{
+    points: data.points,
+    route: data.route
+  }
+})
+
+export default class App extends Component({
   render(){
-    return this.props.children;
+    return (
+      <Provider store={store}>
+        <HudContainer />
+      </Provider>
+    )
   }
 });

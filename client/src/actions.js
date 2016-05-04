@@ -1,5 +1,8 @@
 import * from './constants/actionTypes';
 
+// rakennettu Redux.js tutoriaalin RedditAPIn pohjalta.
+// http://redux.js.org/docs/advanced/AsyncActions.html
+
 // Action creators
 export function changeRoute(text){
   return {type: CHANGE_ROUTE, text}
